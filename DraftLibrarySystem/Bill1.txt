@@ -1,0 +1,3 @@
+Title: "Moby Dick", Quantities: 2, OriginalPrice 10.0, Price: 20.0
+
+Total price: 20.0 Date: Tue Dec 31 15:16:32 CET 2024
