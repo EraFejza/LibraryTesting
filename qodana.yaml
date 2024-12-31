@@ -1,4 +1,2 @@
-version: "2024.2"
-linter: jetbrains/qodana-jvm-community:2024.2
-coverage:
-  enabled: true
+version: "1.0"
+linter: jetbrains/qodana-jvm-community
