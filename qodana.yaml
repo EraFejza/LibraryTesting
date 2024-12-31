@@ -1,7 +1,2 @@
-version: "2024.2"  # Use the latest Qodana version
-linter: jetbrains/qodana-jvm-community:2024.2  # Pin the version of the linter to avoid compatibility issues
-
-coverage:
-  enabled: true  # Enable code coverage analysis
-
-fixesStrategy: apply-fixes  # Automatically apply fixes to the code
+version: "1.0"
+linter: jetbrains/qodana-jvm-community
