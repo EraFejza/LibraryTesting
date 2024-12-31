@@ -1,5 +1,4 @@
 name: Qodana
-
 on:
   workflow_dispatch:
   pull_request:
@@ -18,18 +17,12 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
-          ref: ${{ github.event.pull_request.head.sha }}
-          fetch-depth: 0
+          ref: ${{ github.event.pull_request.head.sha }}  # Checkout the actual commit for PR analysis
+          fetch-depth: 0  # Ensure full history is available for PR analysis
       - name: 'Qodana Scan'
         uses: JetBrains/qodana-action@v2024.2
         with:
           pr-mode: false
+          linter: jetbrains/qodana-jvm-community  # Use the community version of Qodana
         env:
-          QODANA_TOKEN: ${{ secrets.QODANA_TOKEN }}
-          QODANA_ENDPOINT: 'https://qodana.cloud'
-      - uses: actions/cache@v3
-        with:
-          path: .qodana
-          key: qodana-${{ github.ref }}
-          restore-keys: |
-            qodana-
+          QODANA_TOKEN: ${{ secrets.QODANA_TOKEN }}  # You can still use the token for limited features
