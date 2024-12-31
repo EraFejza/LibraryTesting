@@ -1,2 +1,15 @@
-version: "1.0"
-linter: jetbrains/qodana-jvm-community
+version: "2024.2"  # Use the latest version for better compatibility
+linter: jetbrains/qodana-jvm-community:2024.2  # Pin the version of the linter to avoid compatibility issues
+
+coverage:
+  enabled: true  # Enable code coverage analysis
+
+fixesStrategy: apply-fixes  # Automatically apply fixes to the code
+push-fixes: branch  # Push fixes directly to the original branch
+pr-mode: false  # Disable PR mode (since we're pushing directly to the branch)
+
+# Permissions for GitHub Actions workflow
+permissions:
+  contents: write  # Allow the workflow to push fixes to the repository
+  pull-requests: write  # Allow creating and modifying pull requests
+  checks: write  # Allow creating checks (to report the status of the scan)
