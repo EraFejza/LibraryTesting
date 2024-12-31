@@ -23,6 +23,7 @@ jobs:
         uses: JetBrains/qodana-action@v2024.2
         with:
           pr-mode: false
-          linter: jetbrains/qodana-jvm-community  # Use the community version of Qodana
+          # Remove the 'linter' field since it's not valid here
         env:
-          QODANA_TOKEN: ${{ secrets.QODANA_TOKEN }}  # You can still use the token for limited features
+          QODANA_TOKEN: ${{ secrets.QODANA_TOKEN }}  # Make sure the token is valid
+          QODANA_ENDPOINT: 'https://qodana.cloud'  # Endpoint for Qodana Cloud
